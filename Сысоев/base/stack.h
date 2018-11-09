@@ -10,7 +10,7 @@ class TStack
   int size;
   int top;
 public:
-  TStack(int _size)
+  TStack(int _size = MaxStackSize)
   {
     size = _size;
     top = -1;
@@ -21,6 +21,32 @@ public:
   ~TStack()
   {
     delete [] pMem;
+  }
+  bool IsEmpty()
+  {
+	  return top == -1;
+  }
+  bool IsFull()
+  {
+	  return top == size - 1;
+  }
+  T pop()
+  {
+	  if (IsEmpty())
+		  throw "Error";
+	 return pMem[top--];
+  }
+  void push(T v)
+  {
+	  if (IsFull())
+		  throw "Error";
+	  pMem[++top] = v;
+  }
+  T back()
+  {
+	  if (IsEmpty())
+		  throw "Error";
+	  return pMem[top];
   }
 };
 
