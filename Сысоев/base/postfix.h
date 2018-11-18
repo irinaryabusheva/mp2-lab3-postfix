@@ -10,7 +10,6 @@ class TPostfix
 {
   string infix;
   string postfix;
- 
   bool Operand(char op);
   bool IsOperation(char p);
   int Priority(char a, char b);
