@@ -10,11 +10,15 @@ class TPostfix
 {
   string infix;
   string postfix;
+  bool Operand(char op);
+  bool IsOperation(char p);
+  int Priority(char a, char b);
 public:
-  TPostfix()
+  TPostfix( string str = " ")
   {
-    infix = "a + b";
+    infix = str;
   }
+  bool CheckInfix();
   string GetInfix() { return infix; }
   string GetPostfix() { return postfix; }
   string ToPostfix();
